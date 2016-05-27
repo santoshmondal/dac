@@ -31,6 +31,7 @@ public class MAIN {
 		HelloSpring bean4 = (HelloSpring)context.getBean("bean4");
 		System.out.println(bean4.getCityList());
 		
+		
 	}
 	
 	
