@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx" 
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context.xsd
+    
+    http://www.springframework.org/schema/tx 
+    http://www.springframework.org/schema/tx/spring-tx.xsd
+     
+    http://www.springframework.org/schema/aop 
+    http://www.springframework.org/schema/aop/spring-aop.xsd">
+    
+    <context:annotation-config></context:annotation-config>
+    <context:component-scan base-package="package2"></context:component-scan>
+    
+    
+    <bean name="ac1" class="package2.AC" >
+    		<property name="volume" value="100"></property>
+    		<property name="modal" value="bluestar"></property>
+    </bean>
+    
+    
+    <bean name="car" class="package2.Car">
+    		<property name="modal" value="Maruti"></property>
+    		<property name="brand" value="Maruti"></property>
+    		<property name="color" value="white"></property>
+    		
+    		<property name="ac" ref="ac1"></property>
+    </bean>
+    
+    
+    
+    <bean name="car1" class="package2.Car" >
+    		<property name="brand" value="Maruti"></property>
+    </bean>
+    
+    
+    <bean name="car2" class="package2.Car">
+    </bean>
+    
+    
+    <bean name="car3" class="package2.Car">
+    </bean>
+    
+    
+    
+    
+    
+    
+    
+</beans>    
