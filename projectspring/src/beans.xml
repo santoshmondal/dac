@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx" 
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context.xsd
+    
+    http://www.springframework.org/schema/tx 
+    http://www.springframework.org/schema/tx/spring-tx.xsd
+     
+    http://www.springframework.org/schema/aop 
+    http://www.springframework.org/schema/aop/spring-aop.xsd">
+    
+    <bean name="bean1" class="projectspring.HelloSpring" >
+    </bean>
+    
+    <bean name="bean2" class="projectspring.HelloSpring">
+    		<constructor-arg name="name" value="Hello Sagar!!"></constructor-arg>
+    </bean>
+    
+    
+    <bean name="bean3" class="projectspring.HelloSpring">
+    		<property name="name" value="Hello Spring!!"></property>
+    </bean>
+    
+    
+    
+    <bean name="bean4" class="projectspring.HelloSpring">
+    		<property name="name" value="Hello Kharghar"></property>
+    		
+    		<property name="cityList">
+    			<list>
+    				<value>Mumbai</value>
+    				<value>Navi Mumbai</value>
+    			</list>
+    		</property>
+    		
+    		
+    		<property name="cityMap">
+    			<map>
+    				<entry key="Mumbai" value="Info on Mumbai"></entry>
+    			</map>
+    		</property>
+    		
+    		
+    </bean>
+    
+    
+    
+    
+    
+    
+</beans>
