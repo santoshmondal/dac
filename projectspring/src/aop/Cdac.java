@@ -2,8 +2,8 @@ package aop;
 
 public class Cdac {
 	
-	public void staffActivity() {
-		System.out.println("Cdac Staff Activity!!");
+	public void staffActivity(String name, String id) {
+		System.out.println("Cdac Staff Activity :: " + name);
 	}
 	
 	public void helloActivity2() {

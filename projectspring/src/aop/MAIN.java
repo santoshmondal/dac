@@ -9,6 +9,6 @@ public class MAIN {
 	public static void main(String[] args) {
 		Cdac cdac = (Cdac)context.getBean("cdacStaff");
 		
-		cdac.helloActivity2();
+		cdac.staffActivity("Hello CDAC.", "0001");
 	}
 }

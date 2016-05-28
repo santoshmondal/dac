@@ -4,16 +4,16 @@ import org.aspectj.lang.ProceedingJoinPoint;
 
 public class FirstAspect {
 	
-	public void beforeAdvice() {
-		System.out.println("Before Advice");
+	public void beforeAdvice(String param1, String param2) {
+		System.out.println("Before Advice :: " + param1  );
 	}
 	
 	
-	public void afterAdvice() {
-		System.out.println("After Advice");
+	public void afterAdvice(String param1,  String param2) {
+		System.out.println("After Advice ::  " + param1);
 	}
 	
-	public void aroundAdvice(ProceedingJoinPoint joinpoint) {
+	public void aroundAdvice(ProceedingJoinPoint joinpoint, String param1,String param2) {
 		System.out.println("Around -  This is before exeuction");
 		
 		try {

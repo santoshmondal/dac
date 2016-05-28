@@ -26,7 +26,7 @@
     		<aop:aspect id="aspectId1" ref="firstaspect">
     			
     			<!-- what do you want to monitor or filter or intercept -->
-    			<aop:pointcut expression="execution(* aop.Cdac.staffActivity(..) )" id="pid1"/>
+    			<aop:pointcut expression="execution(* aop.Cdac.staffActivity(..)) and args(param1, param2)" id="pid1"/>
     			
     			<!-- actual job on aspect -->
     			<aop:before method="beforeAdvice" pointcut-ref="pid1" />
