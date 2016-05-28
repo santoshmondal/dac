@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx" 
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context.xsd
+    
+    http://www.springframework.org/schema/tx 
+    http://www.springframework.org/schema/tx/spring-tx.xsd
+     
+    http://www.springframework.org/schema/aop 
+    http://www.springframework.org/schema/aop/spring-aop.xsd">
+    
+    <bean id="cdacStaff" class="aop.Cdac"></bean>
+    
+    <!-- Object of the Aspect class -->
+    <bean id="firstaspect" class="aop.FirstAspect"></bean>
+    
+    <aop:config>
+    		<aop:aspect id="aspectId1" ref="firstaspect">
+    			
+    			<!-- what do you want to monitor or filter or intercept -->
+    			<aop:pointcut expression="execution(* aop.Cdac.staffActivity(..) )" id="pid1"/>
+    			
+    			<!-- actual job on aspect -->
+    			<aop:before method="beforeAdvice" pointcut-ref="pid1" />
+    			<aop:after method="afterAdvice" pointcut-ref="pid1" />
+    			
+    			<aop:around method="aroundAdvice" pointcut-ref="pid1" />
+    		</aop:aspect>
+    </aop:config>
+    
+    
+    
+    
+    
+ </beans>   
